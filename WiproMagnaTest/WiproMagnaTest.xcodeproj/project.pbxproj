@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4702FFAB1FD94475002DDD9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4702FFAA1FD94475002DDD9F /* AppDelegate.swift */; };
-		4702FFAD1FD94475002DDD9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4702FFAC1FD94475002DDD9F /* ViewController.swift */; };
 		4702FFB21FD94475002DDD9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4702FFB11FD94475002DDD9F /* Assets.xcassets */; };
 		4702FFB51FD94475002DDD9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4702FFB31FD94475002DDD9F /* LaunchScreen.storyboard */; };
+		4702FFC01FD94835002DDD9F /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4702FFBF1FD94835002DDD9F /* Global.swift */; };
 		FE8DD5A5FF2F7727B14A1971 /* Pods_WiproMagnaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32371FF4532FF4C14FC18533 /* Pods_WiproMagnaTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -18,10 +18,10 @@
 		32371FF4532FF4C14FC18533 /* Pods_WiproMagnaTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WiproMagnaTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4702FFA71FD94474002DDD9F /* WiproMagnaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiproMagnaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4702FFAA1FD94475002DDD9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4702FFAC1FD94475002DDD9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4702FFB11FD94475002DDD9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4702FFB41FD94475002DDD9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4702FFB61FD94475002DDD9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4702FFBF1FD94835002DDD9F /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		6BAE5F5151FA7F3BB3D3208D /* Pods-WiproMagnaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiproMagnaTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WiproMagnaTest/Pods-WiproMagnaTest.release.xcconfig"; sourceTree = "<group>"; };
 		839023E6854F3B124DD9164A /* Pods-WiproMagnaTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WiproMagnaTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WiproMagnaTest/Pods-WiproMagnaTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,13 +76,37 @@
 		4702FFA91FD94475002DDD9F /* WiproMagnaTest */ = {
 			isa = PBXGroup;
 			children = (
+				4702FFBD1FD947E5002DDD9F /* Entities */,
 				4702FFAA1FD94475002DDD9F /* AppDelegate.swift */,
-				4702FFAC1FD94475002DDD9F /* ViewController.swift */,
+				4702FFBC1FD947E5002DDD9F /* Controller */,
+				4702FFBE1FD947E5002DDD9F /* Model */,
 				4702FFB11FD94475002DDD9F /* Assets.xcassets */,
 				4702FFB31FD94475002DDD9F /* LaunchScreen.storyboard */,
 				4702FFB61FD94475002DDD9F /* Info.plist */,
 			);
 			path = WiproMagnaTest;
+			sourceTree = "<group>";
+		};
+		4702FFBC1FD947E5002DDD9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4702FFBD1FD947E5002DDD9F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				4702FFBF1FD94835002DDD9F /* Global.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		4702FFBE1FD947E5002DDD9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4702FFAD1FD94475002DDD9F /* ViewController.swift in Sources */,
+				4702FFC01FD94835002DDD9F /* Global.swift in Sources */,
 				4702FFAB1FD94475002DDD9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +398,7 @@
 				4702FFBB1FD94475002DDD9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
