@@ -16,6 +16,10 @@ class FactsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl?.addTarget(self, action: #selector(self.pullToRefreshed), for: .valueChanged)
+        
         self.tableView.separatorStyle = .none
         self.tableView.register(FactCell.self, forCellReuseIdentifier: "FactCell")
         
@@ -71,7 +75,12 @@ extension FactsVC {
                 self.title = "Error"
                 self.refreshControl?.endRefreshing()
             }
-        } )
+        })
+    }
+    
+    // MARK: -  Pull To Refresh Method
+    func pullToRefreshed() {
+        self.getFactListCall()
     }
 }
 
