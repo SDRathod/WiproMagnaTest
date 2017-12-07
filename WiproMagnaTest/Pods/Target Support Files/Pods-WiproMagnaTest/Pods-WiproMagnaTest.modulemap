@@ -1,0 +1,6 @@
+framework module Pods_WiproMagnaTest {
+  umbrella header "Pods-WiproMagnaTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
