@@ -28,11 +28,19 @@ class FactsVC: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.title = "Loading..."
+
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        
+        super.viewWillDisappear(animated)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -53,7 +61,6 @@ extension FactsVC {
                 
                 self.arrFacts.removeAll()
                 
-                self.title = dictData.object(forKey: "title") as? String ?? ""
                 if let arrData: NSArray = dictData.object(forKey: "rows") as? NSArray {
                     for i in 0 ..< arrData.count {
                         if let dictFact: NSDictionary = arrData.object(at: i) as? NSDictionary {
@@ -67,6 +74,7 @@ extension FactsVC {
                     }
                     self.refreshControl?.endRefreshing()
                     DispatchQueue.main.async {
+                        self.title = dictData.object(forKey: "title") as? String ?? ""
                         self.tableView.reloadData()
                     }
                 }
@@ -109,5 +117,12 @@ extension FactsVC {
         cell?.sizeToFit()
         
         return cell!
+    }
+}
+
+extension FactsVC {
+    // MARK: -  Orientation Change Methods
+    func orientationChanged() {
+        self.tableView.reloadData()
     }
 }
